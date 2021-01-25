@@ -1,2 +1,2 @@
-# CS50
-Coursework and examples from CS50 on EdX
+# CS50x
+Coursework and examples from CS50x on EdX
