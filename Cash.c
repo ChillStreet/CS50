@@ -4,20 +4,20 @@
 
 int main ()
 {
-    float n;
+    float dollars;
 
-//Prompt user for input
+//Prompt user for positive input
 
     do
     {
-        n = get_float("Change owed:");
+        dollars = get_float("Change owed:");
     }
-    while (n < 0);
+    while (dollars < 0);
 
 //Convert float to an integer in cents
 
-int i = n * 100 + 0.5;
+int cents = round(dollars * 100);
 
 
-    printf("%d", i );
+    printf("%i\n", cents);
 }
