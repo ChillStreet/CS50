@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main ()
+int main()
 {
     float dollars;
 
@@ -16,46 +16,38 @@ int main ()
 
 //Convert float to an integer in cents
 
-int cents = round(dollars * 100);
+    int cents = round(dollars * 100);
 
 //Divide by 25 to find number of Quarters
 
-int quarters = cents / 25;
+    int quarters = cents / 25;
 
 //Get remainder of cents / 25
 
-int remaining = cents % 25;
+    int change = cents % 25;
 
-//Dimes = remaining / 10
+//Dimes = change / 10
 
-int dimes = remaining / 10;
+    int dimes = change / 10;
 
-//Get remainder of remaining / 10
+//Get remainder of change / 10
 
-int remaining2 = remaining % 10;
+    int remaining = change % 10;
 
-//Nickels = remaining2 / 5
+//Nickels = remaining / 5
 
-int nickels = remaining2 / 5;
+    int nickels = remaining / 5;
 
-//Get remainder of remaining2 / 5
+//Pennies = remainder of remaining / 5
 
-int remaining3 = remaining2 % 5;
-
-//Pennies = remaining3
-
-int pennies = remaining3;
+    int pennies = remaining % 5;
 
 //Total number of coins
 
-int coins = quarters + dimes + nickels + pennies;
+    int coins = quarters + dimes + nickels + pennies;
 
-//Print all coins to check values are correct
+//Print total number of coins
 
-    printf("Quarters: %i\n", quarters);
-    printf("Dimes: %i\n", dimes);
-    printf("Nickels: %i\n", nickels);
-    printf("Pennies: %i\n", pennies);
     printf("%i\n", coins);
 
 }
