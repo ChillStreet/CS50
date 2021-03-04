@@ -22,46 +22,46 @@ int main(void)
 
     if (score1 > score2)
     {
-        printf ("Player1 wins!\n");
-        printf("%i \n", score1);
-        printf("%i \n", score2);
+        printf("Player 1 wins!\n");
     }
     else if (score1 < score2)
     {
-        printf ("Player2 wins!\n");
-        printf("%i \n", score1);
-        printf("%i \n", score2);
+        printf("Player 2 wins!\n");
     }
     else
     {
-        printf ("Tie!\n");
-        printf("%i \n", score1);
-        printf("%i \n", score2);
+        printf("Tie!\n");
     }
 }
 
 int compute_score(string word)
-    // Compute and return score for string
+// Compute and return score for string
 {
     int wordlength = strlen(word);
     int score = 0;
     int position;
     for (int i = 0; i < wordlength; i++)
     {
-    if (islower(word[i]))
-    {
-        position = word[i] - 97;
-        score += POINTS[position];
-    }
-    else if (isupper(word[i]))
-    {
-        position = word[i] - 65;
-        score += POINTS[position];
-    }
-    else
-    {
-        score += 0;
-    }
+// Calculate score if a char is lowercase using ASCII
+
+        if (islower(word[i]))
+        {
+            position = word[i] - 97;
+            score += POINTS[position];
+        }
+// Calculate score if a char is uppercase using ASCII
+
+        if (isupper(word[i]))
+        {
+            position = word[i] - 65;
+            score += POINTS[position];
+        }
+// Allocate any other symbol a score of 0
+
+        else
+        {
+            score += 0;
+        }
     }
     return score;
 }
