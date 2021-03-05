@@ -31,33 +31,20 @@ int main(void)
     float S = ((float)sentences / words) * 100;
     int index = round(0.0588 * L - 0.296 * S - 15.8);
 
-
-//Print number of letters
-
-    printf("%i letter(s)\n", letters);
-
-//Print number of words
-
-    printf("%i word(s)\n", words);
-
-//Print number of sentences
-
-    printf("%i sentence(s)\n", sentences);
-
 //Print grade
 
-if (index < 1)
-{
-    printf("Before Grade 1\n");
-}
-else if (index > 16)
-{
-    printf("Grade 16+\n");
-}
-else
-{
-     printf("Grade %i\n", index);
-}
+    if (index < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (index > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %i\n", index);
+    }
 }
 
 int count_letters(string input)
@@ -95,10 +82,10 @@ int count_words(string input)
         }
         else
         {
-            count+= 0;
+            count += 0;
         }
     }
-    return count +1;
+    return count + 1;
 }
 
 int count_sentences(string input)
@@ -107,7 +94,7 @@ int count_sentences(string input)
     int total = strlen(input);
     int count = 0;
 
-for (int i = 0; i < total; i++)
+    for (int i = 0; i < total; i++)
     {
         if (input[i] == '.' || input[i] == '!' || input[i] == '?')
         {
@@ -115,7 +102,7 @@ for (int i = 0; i < total; i++)
         }
         else
         {
-            count+= 0;
+            count += 0;
         }
     }
     return count;
