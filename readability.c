@@ -21,9 +21,16 @@ int main(void)
 
     int words = count_words(input);
 
-//Calculate number of sentenes using count_sentences function
+//Calculate number of sentences using count_sentences function
 
     int sentences = count_sentences(input);
+
+//Calculate index
+
+    float L = ((float)letters / words) * 100;
+    float S = ((float)sentences / words) * 100;
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
+
 
 //Print number of letters
 
@@ -36,6 +43,21 @@ int main(void)
 //Print number of sentences
 
     printf("%i sentence(s)\n", sentences);
+
+//Print grade
+
+if (index < 1)
+{
+    printf("Before Grade 1\n");
+}
+else if (index > 16)
+{
+    printf("Grade 16+\n");
+}
+else
+{
+     printf("Grade %i\n", index);
+}
 }
 
 int count_letters(string input)
