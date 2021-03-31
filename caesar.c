@@ -46,6 +46,10 @@ int main (int argc, string argv[])
         {
             printf("%c", ((p[j] + keyint - 'a') % 26 + 'a'));
         }
+        else if (isupper(p[j]))
+        {
+            printf("%c", ((p[j]+ keyint - 'A') % 26 + 'A'));
+        }
     }
         printf("\n");
 }
