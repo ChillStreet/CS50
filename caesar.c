@@ -40,10 +40,12 @@ int main (int argc, string argv[])
 
 //Use a for loop to iterate through plaintext
 
-    for(int i = 0; i < strlen(p); i++)
+    for(int j = 0; j < strlen(p); j++)
     {
-        char c =  p[i];
-        printf("%c", c + 1);
+        if (islower(p[j]))
+        {
+            printf("%c", ((p[j] + keyint - 'a') % 26 + 'a'));
+        }
     }
         printf("\n");
 }
