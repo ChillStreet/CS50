@@ -18,13 +18,7 @@ int main (int argc, string argv[])
                 printf("Usage: ./caesar key\n");
                 return 1;
             }
-            else
-//If inputted characters are all digits, convert 2nd argument from string to integer and print
-            {
-                int keyint = atoi(key);
-                printf("Check Digit: %i !\n", keyint);
 
-            }
         }
     }
 //Return error if 2 arguments are not input
@@ -33,4 +27,9 @@ int main (int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+
+//If inputted characters are all digits, convert 2nd argument from string to integer and print
+
+     int keyint = atoi(argv[1]);
+     printf("Success\n %i\n", keyint);
 }
