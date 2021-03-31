@@ -28,8 +28,22 @@ int main (int argc, string argv[])
         return 1;
     }
 
-//If inputted characters are all digits, convert 2nd argument from string to integer and print
+//If inputted characters are all digits, convert 2nd argument from string to integer
 
      int keyint = atoi(argv[1]);
-     printf("Success\n %i\n", keyint);
+
+//Get plaintext from user
+
+     string p = get_string("plaintext: ");
+
+     printf("ciphertext: ");
+
+//Use a for loop to iterate through plaintext
+
+    for(int i = 0; i < strlen(p); i++)
+    {
+        char c =  p[i];
+        printf("%c", c + 1);
+    }
+        printf("\n");
 }
