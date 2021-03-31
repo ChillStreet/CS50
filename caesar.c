@@ -1,6 +1,5 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <math.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
@@ -8,12 +7,30 @@
 int main (int argc, string argv[])
 {
     if (argc == 2)
+//If only 2 arguments are input, iterate through second argument to check for digits
     {
-        printf("Success \n");
-        printf("%s \n", argv[1]);
+        string key = argv[1];
+        for (int i = 0; i < strlen(key); i++)
+        {
+//If any character is not a digit, return an error
+            if(isdigit(key[i]) == 0)
+            {
+                printf("Usage: ./caesar key\n");
+                return 1;
+            }
+            else
+//If inputted characters are all digits, convert 2nd argument from string to integer and print
+            {
+                int keyint = atoi(key);
+                printf("Check Digit: %i !\n", keyint);
+
+            }
+        }
     }
+//Return error if 2 arguments are not input
     else
     {
         printf("Usage: ./caesar key\n");
+        return 1;
     }
 }
