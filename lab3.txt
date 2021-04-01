@@ -1,0 +1,208 @@
+sort1 uses: Bubble sort
+
+How do you know?: Slowest across random and merged, but fastest at the sorted50000.txt
+
+sort2 uses: Merge sort
+
+How do you know?: Fastest search across all examples, except for on sorted50000.txt
+
+sort3 uses: Selection sort
+
+How do you know?: Consistently middle/2nd in order and slowest at sorted lists
+
+Timings
+
+random5000.txt
+
+sort1                   Slowest
+
+real    0m0.118s
+user    0m0.062s
+sys     0m0.000s
+
+sort2                   Fastest
+
+real    0m0.010s
+user    0m0.003s
+sys     0m0.007s
+
+sort3                   Middle
+
+real    0m0.073s
+user    0m0.030s
+sys     0m0.004s
+
+
+
+random10000.txt
+
+sort1                   Slowest
+
+real    0m0.521s
+user    0m0.235s
+sys     0m0.016s
+
+sort2                   Fastest
+
+real    0m0.023s
+user    0m0.004s
+sys     0m0.019s
+
+sort3                   Middle
+
+real    0m0.240s
+user    0m0.104s
+sys     0m0.020s
+
+
+
+random50000.txt
+
+sort1                   Slowest
+
+real    0m16.292s
+user    0m6.635s
+sys     0m0.084s
+
+sort2                   Fastest
+
+real    0m4.374s
+user    0m0.026s
+sys     0m0.084s
+
+sort3                   Middle
+
+real    0m7.776s
+user    0m2.528s
+sys     0m0.044s
+
+
+
+reversed5000.txt
+
+sort1                   Slowest
+
+real    0m0.097s
+user    0m0.055s
+sys     0m0.000s
+
+sort2                   Fastest
+
+real    0m0.009s
+user    0m0.009s
+sys     0m0.000s
+
+sort3                   Middle
+
+real    0m0.035s
+user    0m0.027s
+sys     0m0.008s
+
+
+
+reversed10000.txt
+
+sort1                   Slowest
+
+real    0m0.368s
+user    0m0.191s
+sys     0m0.024s
+
+sort2                   Fastest
+
+real    0m0.027s
+user    0m0.009s
+sys     0m0.018s
+
+sort3                   Middle
+
+real    0m0.181s
+user    0m0.108s
+sys     0m0.008s
+
+
+
+reversed50000.txt
+
+sort1                   Slowest
+
+real    0m12.572s
+user    0m4.845s
+sys     0m0.056s
+
+sort2                   Fastest
+
+real    0m2.640s
+user    0m0.016s
+sys     0m0.078s
+
+sort3                   Middle
+
+real    0m9.076s
+user    0m2.563s
+sys     0m0.076s
+
+
+
+sorted5000.txt
+
+sort1                   Middle
+
+real    0m0.012s
+user    0m0.000s
+sys     0m0.010s
+
+sort2                   Fastest
+
+real    0m0.011s
+user    0m0.004s
+sys     0m0.008s
+
+sort3                   Slowest
+
+real    0m0.037s
+user    0m0.025s
+sys     0m0.012s
+
+
+
+sorted10000.txt
+
+sort1               Middle
+
+real    0m0.039s
+user    0m0.005s
+sys     0m0.011s
+
+sort2               Fastest
+
+real    0m0.019s
+user    0m0.009s
+sys     0m0.009s
+
+sort3               Slowest
+
+real    0m0.167s
+user    0m0.103s
+sys     0m0.016s
+
+
+sorted50000.txt
+
+sort1               Fastest
+
+real    0m2.463s
+user    0m0.020s
+sys     0m0.069s
+
+sort2               Second
+
+real    0m3.401s
+user    0m0.032s
+sys     0m0.064s
+
+sort3               Slowest
+
+real    0m7.922s
+user    0m2.558s
+sys     0m0.060s
