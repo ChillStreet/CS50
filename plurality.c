@@ -67,11 +67,15 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
+// Loop through candidates to find matching name
     for(int i = 0; i < candidate_count; i++)
     {
+//If vote name matches a candidate name stored in the candidates array add 1 to vote count for that candidate
         if(strcmp(candidates[i].name, name) == 0)
         {
-            candidates[i].votes ++;
+//Add 1 to vote count
+            candidates[i].votes++;
+//Test print to check count works
             printf("%i\n", candidates[i].votes);
             return true;
         }
@@ -82,6 +86,31 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
-    return;
+
+// Tracks winning vote amount
+    int winvotes = 0;
+// Tracks candidate we are looking at
+    int thisguy = 0;
+
+    while(thisguy < candidate_count)
+    {
+        if( winvotes < candidates[thisguy].votes)
+        {
+//Update winvotes the thisguy's number of votes
+            winvotes = candidates[thisguy].votes;
+        }
+//Move to next candidate in the struct
+        thisguy++;
+    }
+
+    for (thisguy = 0; thisguy < candidate_count; thisguy++)
+    {
+        if(candidates[thisguy].votes == winvotes)
+        {
+//Print the winner. ie the person who's vote count is equal to winvotes
+            printf("%s\n", candidates[thisguy].name);
+        }
+    }
+return;
+
 }
