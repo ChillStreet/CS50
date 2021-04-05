@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -202,13 +203,29 @@ int find_min(void)
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
-    // TODO
-    return false;
-}
+//Iterate through candidates and check if they have been eliminated
+//If candidate is not eliminated AND candidate total votes = min figure:
+//Add 1 to active counter + Add 1 to hasmin counter
+//If candidate is not eliminated but doesn't have min votes, Add 1 to active
+//If total of active candidates (active) = number of candidates with min figure (hasmin), return true
+int active = 0;
+int hasmin = 0;
 
-// Eliminate the candidate (or candidates) in last place
-void eliminate(int min)
-{
-    // TODO
-    return;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (!candidates[i].eliminated) && candidates[i].votes ==min)
+        {
+            active++;
+            hasmin++;
+        }
+        else if (!candidates[i].eliminated)
+        {
+            active++;
+        }
+    }
+    if (active == hasmin)
+    {
+        return true;
+    }
+    return false;
 }
