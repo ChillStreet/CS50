@@ -132,9 +132,9 @@ bool vote(int voter, int rank, string name)
 // Iterate through candidates
 // Check name entered is stored in candidates array
 // If so, use i counter to indicate order of preference and return true
-    for (i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (!strcmp(candidates[i].name))
+        if (!strcmp(candidates[i].name, name))
         {
             preferences[voter][rank]= i;
             return true;
@@ -148,14 +148,15 @@ void tabulate(void)
 {
 //Loop through preferences array
 //Check candidate has not been eliminated
-//If not eliminated, add 1 to candidates preference count at index [i][j]
+//If not eliminated, add 1 to vote count at index [i][j] of candidates.votes
     for (int i = 0; i < voter_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if (!candidates[preferences[i]][j].eliminated)
+            int x = preferences[i][j];
+            if (!candidates[x].eliminated)
             {
-                candidates[preferences][i][j]++;
+                 candidates[x].votes ++;
             }
         }
     }
@@ -168,7 +169,7 @@ bool print_winner(void)
 //Iterate through candidates counted votes
 //Check if candidate has a majority of votes (more than total votes/2)
 //If so, print as winner
-    for (int i  0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > (voter_count / 2))
         {
@@ -188,7 +189,7 @@ int find_min(void)
 //If candidate has not been eliminated, check their number of votes is lower than first candidates
 //If so, allocate this number of votes as min and continue to loop
 //Return the lowest total number of votes
-    int min = candidates[0].votes
+    int min = candidates[0].votes;
 
     for (int i = 0; i < candidate_count; i++)
     {
@@ -213,7 +214,7 @@ int hasmin = 0;
 
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eliminated) && candidates[i].votes ==min)
+        if (!candidates[i].eliminated && candidates[i].votes == min)
         {
             active++;
             hasmin++;
@@ -228,4 +229,19 @@ int hasmin = 0;
         return true;
     }
     return false;
+}
+
+// Eliminate the candidate (or candidates) in last place
+void eliminate(int min)
+{
+//Iterate through candidates
+//If candidate is not eliminated AND their vote total = min then make candidate[i].eliminated true to eliminate them
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (!candidates[i].eliminated && candidates[i].votes == min)
+        {
+            candidates[i].eliminated = true;
+        }
+    }
+    return;
 }
