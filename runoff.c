@@ -144,6 +144,7 @@ bool vote(int voter, int rank, string name)
 }
 
 // Tabulate votes for non-eliminated candidates
+//PROBLEM HERE!
 void tabulate(void)
 {
 //Loop through preferences array
