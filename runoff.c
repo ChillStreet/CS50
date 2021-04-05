@@ -129,7 +129,7 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
 // Iterate through candidates
-// Check name entered is stored in canidates array
+// Check name entered is stored in candidates array
 // If so, use i counter to indicate order of preference and return true
     for (i = 0; i < candidate_count; i++)
     {
@@ -145,7 +145,19 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    // TODO
+//Loop through preferences array
+//Check candidate has not been eliminated
+//If not eliminated, add 1 to candidates preference count at index [i][j]
+    for (int i = 0; i < voter_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (!candidates[preferences[i]][j].eliminated)
+            {
+                candidates[preferences][i][j]++;
+            }
+        }
+    }
     return;
 }
 
