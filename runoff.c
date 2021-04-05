@@ -136,7 +136,7 @@ bool vote(int voter, int rank, string name)
     {
         if (!strcmp(candidates[i].name, name))
         {
-            preferences[voter][rank]= i;
+            preferences[voter][rank] = i;
             return true;
         }
     }
@@ -144,12 +144,11 @@ bool vote(int voter, int rank, string name)
 }
 
 // Tabulate votes for non-eliminated candidates
-//PROBLEM HERE!
 void tabulate(void)
 {
 //Loop through preferences array
 //Check candidate has not been eliminated
-//If not eliminated, add 1 to vote count at index [i][j] of candidates.votes
+//If not eliminated, add 1 to vote count at index [i][j] of candidates.votes and break loop to check next voter
     for (int i = 0; i < voter_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
@@ -157,7 +156,8 @@ void tabulate(void)
             int x = preferences[i][j];
             if (!candidates[x].eliminated)
             {
-                 candidates[x].votes ++;
+                candidates[x].votes ++;
+                break;
             }
         }
     }
@@ -210,8 +210,8 @@ bool is_tie(int min)
 //Add 1 to active counter + Add 1 to hasmin counter
 //If candidate is not eliminated but doesn't have min votes, Add 1 to active
 //If total of active candidates (active) = number of candidates with min figure (hasmin), return true
-int active = 0;
-int hasmin = 0;
+    int active = 0;
+    int hasmin = 0;
 
     for (int i = 0; i < candidate_count; i++)
     {
